@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+body {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+}
+article.aquama-calculator .container {
+    width: 1000px;
+    min-height: 1080px;
+
+    padding: 20px;
+    background: cadetblue;
+}
+article.aquama-calculator .container form.aquama-calculator-input {
+    margin-bottom: 30px;
+}
+article.aquama-calculator .container form.aquama-calculator-input h1 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    font-size: 30px;
+    text-align: center;
+}
+article.aquama-calculator .container form.aquama-calculator-input ul {
+    margin-top: 50px;
+    margin-bottom: 15px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    list-style: none;
+}
+article.aquama-calculator .container form.aquama-calculator-input ul li {
+    margin-bottom: 10px;
+
+    display: flex;
+    flex-direction: column;
+}
+article.aquama-calculator .container form.aquama-calculator-input ul li label {
+    margin-bottom: 12px;
+
+    font-size: 20px;
+}
+article.aquama-calculator .container form.aquama-calculator-input ul li .dropdown {
+    position: relative;
+    box-sizing: content-box;
+    width: 230px;
+    height: 35px;
+    padding: 18px 21px;
+    background-color: #fff;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+}
+article.aquama-calculator .container form.aquama-calculator-input ul li .dropdown:hover svg {
+    transform: scale(1.1);
+}
+article.aquama-calculator .container form.aquama-calculator-input ul li .dropdown button {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+}
+article.aquama-calculator .container form.aquama-calculator-input ul li .dropdown button:focus ~ svg {
+    transform: rotate(-180deg);
+}
+article.aquama-calculator .container form.aquama-calculator-input ul li .dropdown .options {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+article.aquama-calculator .container form.aquama-calculator-input ul li .dropdown input {
+    display: none;
+}
+article.aquama-calculator .container form.aquama-calculator-input ul li .dropdown input:checked + label {
+    display: block;
+    z-index: 2;
+    font-weight: 600;
+    transform: none !important;
+}
+article.aquama-calculator .container form.aquama-calculator-input ul li .dropdown label {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    padding: 18px 21px;
+    line-height: 1;
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s ease;
+}
+article.aquama-calculator .container form.aquama-calculator-input ul li .dropdown label:hover {
+    background-color: #d6d6d6;
+}
+article.aquama-calculator .container form.aquama-calculator-input ul li .dropdown button:focus + .options input:not(:checked) + label, .dropdown .options label:active, .dropdown .options label:active ~ label {
+    transform: translateY(calc(var(--index) * 100%));
+}
+article.aquama-calculator .container form.aquama-calculator-input ul li .dropdown button:focus + .options input:checked + label ~ label, .dropdown .options input:checked ~ label:active, .dropdown .options input:checked ~ label:active ~ label {
+    transform: translateY(calc((var(--index) - 1) * 100%));
+}
+article.aquama-calculator .container form.aquama-calculator-input ul li .dropdown svg {
+    position: absolute;
+    width: 21px;
+    top: 25%;
+    right: 14px;
+    z-index: 2;
+    fill: currentColor;
+    transition: transform 0.1s;
+}
+article.aquama-calculator .container form.aquama-calculator-input .button {
+    width: inherit;
+
+    margin-top: 70px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+article.aquama-calculator .container form.aquama-calculator-input button {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    background: transparent;
+    padding: 0;
+    font-size: inherit;
+    font-family: inherit;
+}
+article.aquama-calculator .container form.aquama-calculator-input button.calculate {
+    width: 12rem;
+    height: auto;
+}
+article.aquama-calculator .container form.aquama-calculator-input button.calculate .circle {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: relative;
+    display: block;
+    margin: 0;
+    width: 3rem;
+    height: 3rem;
+    background: #282936;
+    border-radius: 1.625rem;
+}
+article.aquama-calculator .container form.aquama-calculator-input button.calculate .circle .icon {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: #fff;
+}
+article.aquama-calculator .container form.aquama-calculator-input button.calculate .circle .icon.arrow {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    left: 0.625rem;
+    width: 1.125rem;
+    height: 0.125rem;
+    background: none;
+}
+article.aquama-calculator .container form.aquama-calculator-input button.calculate .circle .icon.arrow:before {
+    position: absolute;
+    content: "";
+    top: -0.25rem;
+    right: 0.0625rem;
+    width: 0.625rem;
+    height: 0.625rem;
+    border-top: 0.170rem solid #fff;
+    border-right: 0.170rem solid #fff;
+    transform: rotate(45deg);
+}
+article.aquama-calculator .container form.aquama-calculator-input button.calculate .button-text {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.75rem 0;
+    margin: 0 0 0 1.85rem;
+    color: #282936;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.4;
+    text-align: center;
+    text-transform: uppercase;
+}
+article.aquama-calculator .container form.aquama-calculator-input button:hover .circle {
+    width: 100%;
+}
+article.aquama-calculator .container form.aquama-calculator-input button:hover .circle .icon.arrow {
+    background: #fff;
+    transform: translate(1rem, 0);
+}
+article.aquama-calculator .container form.aquama-calculator-input button:hover .button-text {
+    color: #fff;
+}
+article.aquama-calculator .container section.aquama-calculator-output {
+    display: none;
+    flex-direction: row;
+    justify-content: space-between;
+}
+article.aquama-calculator .container section.aquama-calculator-output h4 {
+    margin-bottom: 10px;
+}
