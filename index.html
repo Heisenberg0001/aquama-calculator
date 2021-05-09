@@ -6,99 +6,66 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <article class="aquama-calculator">
-        <div class="container">
-            <form class="aquama-calculator-input" onsubmit="return validateMyForm();">
-                <h1 class="aquama-calculator-header">გაიგე დაახლოებით რამდენს ხარჯავ 6 თვეში სახლის დასალაგებელ სითხესა და სადეზინფექციო ხსნარებში</h1>
-                <ul class="aquama-calculator-selects">
-                    <li>
-                        <label for="square-area">ბინის ფართობი</label>
-                        <div class="dropdown" id="square-area">
-                            <button></button>
-                            <div class="options">
-                                <input id="square-area-default" type="radio" name="square-area" value="" checked>
-                                <label style="--index: 1" for="square-area-default">გთხოვთ აირჩიოთ შესაბამისი ვარიანტი</label>
-
-                                <input id="square-area-75" type="radio" name="square-area" value="75">
-                                <label style="--index: 2" for="square-area-75">50-100</label>
-
-                                <input id="square-area-125" type="radio" name="square-area" value="australia">
-                                <label style="--index: 3" for="square-area-125">100-150</label>
-
-                                <input id="square-area-200" type="radio" name="square-area" value="europe">
-                                <label style="--index: 4" for="square-area-200">150+</label>
-                            </div>
-                            <svg viewBox="0 0 24 24">
-                                <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path>
-                            </svg>
-                        </div>
-                    </li>
-                    <li>
-                        <label for="number-of-people">ოჯახის წევრების რაოდენობა</label>
-                        <div class="dropdown" id="number-of-people">
-                            <button></button>
-                            <div class="options">
-                                <input id="number-of-people-default" type="radio" name="number-of-people" value="" checked>
-                                <label style="--index: 1" for="number-of-people-default">გთხოვთ აირჩიოთ შესაბამისი ვარიანტი</label>
-
-                                <input id="number-of-people-1" type="radio" name="number-of-people" value="1">
-                                <label style="--index: 2" for="number-of-people-1">1</label>
-
-                                <input id="number-of-people-2" type="radio" name="number-of-people" value="2">
-                                <label style="--index: 3" for="number-of-people-2">2</label>
-
-                                <input id="number-of-people-3" type="radio" name="number-of-people" value="3">
-                                <label style="--index: 4" for="number-of-people-3">3</label>
-
-                                <input id="number-of-people-4" type="radio" name="number-of-people" value="4">
-                                <label style="--index: 4" for="number-of-people-4">4+</label>
-                            </div>
-                            <svg viewBox="0 0 24 24">
-                                <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path>
-                            </svg>
-                        </div>
-                    </li>
-                    <li>
-                        <label for="number-of-months">ოჯახის წევრების რაოდენობა</label>
-                        <div class="dropdown" id="number-of-months">
-                            <button></button>
-                            <div class="options">
-                                <input id="number-of-months-default" type="radio" name="number-of-months" value="" checked>
-                                <label style="--index: 1" for="number-of-months-default">გთხოვთ აირჩიოთ შესაბამისი ვარიანტი</label>
-
-                                <input id="number-of-months-6" type="radio" name="number-of-people" value="6">
-                                <label style="--index: 2" for="number-of-months-6">6</label>
-                            </div>
-                            <svg viewBox="0 0 24 24">
-                                <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path>
-                            </svg>
-                        </div>
-                    </li>
-                </ul>
-                <div class="button">
-                    <button class="calculate" id="calculate">
+<section class="aquama-calculator">
+    <div class="container">
+        <form class="aquama-calculator-input">
+            <h1 class="aquama-calculator-header">გაიგე დაახლოებით რამდენს ხარჯავ 6 თვეში სახლის დასალაგებელ სითხესა და სადეზინფექციო ხსნარებში</h1>
+            <ul class="aquama-calculator-selects">
+                <li>
+                    <label for="square-area">ბინის ფართობი: </label>
+                    <select id="square-area">
+                        <option value="hide">გთხოვთ აირჩიოთ შესაბამისი ვარიანტი</option>
+                        <option value="75" rel="icon-temperature">50-100</option>
+                        <option value="125">100-150</option>
+                        <option value="200">150+</option>
+                    </select>
+                </li>
+                <li>
+                    <label for="number-of-people">ბინის ფართობი: </label>
+                    <select id="number-of-people">
+                        <option value="hide">გთხოვთ აირჩიოთ შესაბამისი ვარიანტი</option>
+                        <option value="1" rel="icon-temperature">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4+</option>
+                    </select>
+                </li>
+                <li>
+                    <label for="number-of-months">თვეების რაოდენობა: </label>
+                    <select id="number-of-months">
+                        <option value="hide">გთხოვთ აირჩიოთ შესაბამისი ვარიანტი</option>
+                        <option value="6" rel="icon-temperature">6</option>
+                    </select>
+                </li>
+            </ul>
+            <div class="button">
+                <button type="button" class="calculate" id="calculate">
                         <span class="circle" aria-hidden="true">
                             <span class="icon arrow"></span>
                         </span>
-                        <span class="button-text">გამოთვალე</span>
-                    </button>
-                </div>
-            </form>
-            <section class="aquama-calculator-output">
-                <div class="aquama-total-cost">
-                    <h4 class="aquama-total-cost-header">შენ 6 თვეში ხარჯავ</h4>
-                    <p>TOTAL COST: <span id="total-cost"></span></p>
-                </div>
-                <div class="aquama-aquama-cost">
-                    <h4 class="aquama-total-cost-header">აქუამას შეძენის შემთხვევაში დახარჯავ</h4>
-                    <p>AQUAMA COST: <span id="aquama-cost"></span></p>
-                </div>
-            </section>
-        </div>
-    </article>
-    <script src="script.js"></script>
+                    <span class="button-text">გამოთვალე</span>
+                </button>
+            </div>
+        </form>
+        <section class="aquama-calculator-output">
+            <div class="total-cost">
+                <h4 class="total-cost-header">შენ 6 თვეში ხარჯავ</h4>
+                <p>TOTAL COST: <span id="total-cost"></span></p>
+            </div>
+            <div class="aquama-cost">
+                <h4 class="aquama-cost-header">აქუამას შეძენის შემთხვევაში დახარჯავ</h4>
+                <p>AQUAMA COST: <span id="aquama-cost"></span></p>
+            </div>
+            <div class="aquama-investment">
+                <p class="aquama-investment-txt">აქუამაში ჩადებულ ინვესტიციას ამოიღებ 8 თვეში</p>
+            </div>
+        </section>
+    </div>
+</section>
+<script src="script.js"></script>
 </body>
 </html>
